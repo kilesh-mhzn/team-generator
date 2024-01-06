@@ -1,0 +1,15 @@
+main {
+  display: grid;
+  place-content: center;
+  gap: 16px;
+}
+.list-container {
+  list-style: none;
+  border: 1px solid #eceff5;
+  border-radius: 5px;
+  padding: 16px;
+}
+
+.error-msg {
+  color: red;
+}
