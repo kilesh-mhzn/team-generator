@@ -1,4 +1,4 @@
-import { Component } from '@angular/core';
+import {Component, ElementRef, ViewChild} from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { RouterOutlet } from '@angular/router';
 import {TeamComponent} from "./team/team.component";
@@ -11,6 +11,8 @@ import {TeamComponent} from "./team/team.component";
   styleUrl: './app.component.css'
 })
 export class AppComponent {
+  @ViewChild('memberInput') memberInput!: ElementRef;
+
   title = 'team-generator';
   memberName='';
   members:string[] = [];
@@ -32,6 +34,7 @@ export class AppComponent {
 
     this.members.push(this.memberName);
     this.memberName='';
+    this.memberInput.nativeElement.focus();
   }
   onNumberOfTeamChange(value: number) {
     this.numberOfTeams=value;
